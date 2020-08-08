@@ -26,6 +26,7 @@ class CalendarsController < ApplicationController
     require "date"
     @todays_date = Date.today
     puts(day)
+    puts [d.wday] 
     # 例)　今日が2月1日の場合・・・ Date.today.day => 1日
 
     @week_days = []
