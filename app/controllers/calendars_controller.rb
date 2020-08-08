@@ -8,7 +8,7 @@ class CalendarsController < ApplicationController
 
   # 予定の保存
   def create
-    
+
     Post.create(plan: params[:plan])
     redirect_to action: :index
   end
@@ -23,7 +23,9 @@ class CalendarsController < ApplicationController
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
 
     # Dateオブジェクトは、日付を保持しています。下記のように`.today.day`とすると、今日の日付を取得できます。
+    require "date"
     @todays_date = Date.today
+    puts(day)
     # 例)　今日が2月1日の場合・・・ Date.today.day => 1日
 
     @week_days = []
